@@ -1,11 +1,17 @@
 import speech_recognition as sr
+import pygame
+import pathlib
+import os
+from time import sleep
+import pyglet
 
 VI_NAME = ["João", "joão"]
 
 def listen():
     #creates object listening for microphone
-    print("diga")
     recognizer = sr.Recognizer()
+    mic = sr.Microphone()
+    sr.Microphone.list_microphone_names()
     with sr.Microphone() as source:
         recognizer.pause_threshold = 0.5
         recognizer.adjust_for_ambient_noise(source)
@@ -26,3 +32,11 @@ def isActive(audio):
             return True
         else:
             return False
+
+
+def speak():
+    music = pyglet.media.load("good.mp3", streaming=False)
+    music.play()
+
+    sleep(music.duration)  # prevent from killing
+    os.remove("good.mp3")  # remove temperory file

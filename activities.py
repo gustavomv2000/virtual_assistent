@@ -1,7 +1,9 @@
 import voice_listener
 import webbrowser
 from gtts import gTTS
-import os
+from pynput.keyboard import Key, Controller
+import time
+
 
 VI_NAME = ["João", "joão"]
 
@@ -16,10 +18,13 @@ def check_activities(audio):
     elif audio in VI_NAME:
         call_name()
 
+    elif "digite" in audio or "Digite" in audio:
+        type(audio)
+
     if response != "":
         tts = gTTS(text=response, lang='pt-br')
         tts.save("good.mp3")
-        os.system("mpg321 good.mp3")
+        voice_listener.speak()
 
 
 def search_for(audio):
@@ -42,7 +47,7 @@ def search_for(audio):
     webbrowser.register('chrome',
                         None,
                         webbrowser.BackgroundBrowser(
-                            '/usr/bin/google-chrome'))
+                            'C:\Program Files\Google\Chrome\Application\chrome.exe'))
     webbrowser.get('chrome').open(url)
 
     return "Estes foram os resultados encontrados"
@@ -55,11 +60,26 @@ def greetings():
 def call_name():
     tts = gTTS(text="o que deseja?", lang='pt-br')
     tts.save("good.mp3")
-    os.system("mpg321 good.mp3")
+    voice_listener.speak()
     audio = voice_listener.listen()
     if audio != False:
         check_activities(audio)
     else:
         tts = gTTS(text="Não entendi", lang='pt-br')
         tts.save("good.mp3")
-        os.system("mpg321 good.mp3")
+        voice_listener.speak()
+
+
+def type(text):
+    tts = gTTS(text="Ok", lang='pt-br')
+    tts.save("good.mp3")
+    voice_listener.speak()
+
+    if "digite" in text:
+        text = text.split("digite", 1)[1]
+
+    keyboard = Controller()
+
+    for char in text:
+        keyboard.press(char)
+        keyboard.release(char)

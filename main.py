@@ -7,5 +7,4 @@ while(True):
     audio = voice_listener.listen()
     if audio != False:
         if voice_listener.isActive(audio):
-            print("Working")
             activities.check_activities(audio)
