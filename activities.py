@@ -3,6 +3,7 @@ import webbrowser
 from gtts import gTTS
 from pynput.keyboard import Key, Controller
 import time
+import os
 
 
 VI_NAME = ["João", "joão"]
@@ -20,6 +21,19 @@ def check_activities(audio):
 
     elif "digite" in audio or "Digite" in audio:
         type(audio)
+
+    elif "youtube" in audio.lower():
+        search_youtube(audio)
+
+    elif "fechar janela" in audio.lower():
+        close_tab()
+
+    elif "fechar aplicativo" in audio.lower():
+        close_app()
+
+    elif "desligar computador" in audio.lower():
+        shutdown()
+
 
     if response != "":
         tts = gTTS(text=response, lang='pt-br')
@@ -39,9 +53,6 @@ def search_for(audio):
         terms = audio.split("pesquisa sobre", 1)[1]
     elif "pesquise" in audio:
         terms = audio.split("pesquise", 1)[1]
-
-    print("audio: ", audio)
-    print("search terms was: ", terms)
 
     url = "https://www.google.com.tr/search?q={}".format(terms)
     webbrowser.register('chrome',
@@ -71,10 +82,6 @@ def call_name():
 
 
 def type(text):
-    tts = gTTS(text="Ok", lang='pt-br')
-    tts.save("good.mp3")
-    voice_listener.speak()
-
     if "digite" in text:
         text = text.split("digite", 1)[1]
 
@@ -83,3 +90,37 @@ def type(text):
     for char in text:
         keyboard.press(char)
         keyboard.release(char)
+
+
+def search_youtube(audio):
+    terms = ""
+    if "youtube" in audio.lower():
+        terms = audio.lower().split("youtube", 1)[1]
+    url = "https://www.youtube.com/results?search_query={}".format(terms)
+    webbrowser.register('chrome',
+                        None,
+                        webbrowser.BackgroundBrowser(
+                            'C:\Program Files\Google\Chrome\Application\chrome.exe'))
+    webbrowser.get('chrome').open(url)
+
+
+def close_tab():
+    keyboard = Controller()
+
+    keyboard.press(Key.ctrl)
+    keyboard.press('w')
+    keyboard.release(Key.ctrl)
+    keyboard.release('w')
+
+
+def close_app():
+    keyboard = Controller()
+
+    keyboard.press(Key.alt)
+    keyboard.press(Key.f4)
+    keyboard.release(Key.alt)
+    keyboard.release(Key.f4)
+
+
+def shutdown():
+    os.system("shutdown /s /t 1")
