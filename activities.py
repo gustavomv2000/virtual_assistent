@@ -6,20 +6,20 @@ import time
 import os
 
 
-VI_NAME = ["João", "joão"]
+VI_NAME = ["Google", "google"]
 
 def check_activities(audio):
     response = ""
     if "pesquise por" in audio or "pesquisar" in audio or "pesquise sobre" in audio or "pesquisa sobre" in audio or "pesquise" in audio:
         response = search_for(audio)
 
-    elif "Oi" in audio or "oi" in audio or "olá" in audio or "Olá" in audio or "Eae" in audio or "eae" in audio:
-        response = greetings()
+    #elif "Oi" in audio or "oi" in audio or "olá" in audio or "Olá" in audio or "Eae" in audio or "eae" in audio:
+    #    response = greetings()
 
     elif audio in VI_NAME:
         call_name()
 
-    elif "digite" in audio or "Digite" in audio:
+    elif "digite" in audio.lower():
         type(audio)
 
     elif "youtube" in audio.lower():

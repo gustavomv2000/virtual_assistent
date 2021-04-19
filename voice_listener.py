@@ -6,7 +6,7 @@ import os
 from time import sleep
 import pyglet
 
-VI_NAME = ["João", "joão"]
+VI_NAME = "google"
 
 def listen():
     #creates object listening for microphone
@@ -28,11 +28,10 @@ def listen():
 
 
 def isActive(audio):
-    for name in VI_NAME:
-        if name in audio:
-            return True
-        else:
-            return False
+    if VI_NAME.lower() in audio.lower():
+        return True
+    else:
+        return False
 
 
 def speak():
