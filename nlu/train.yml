@@ -1,7 +1,27 @@
 commands:
   # search
   - command:
-      input:  Pesquise por
+      input:  pesquise por
+      entity: search
+      action: search_for
+  - command:
+      input:  qual o próximo feriado
+      entity: search
+      action: search_for
+  - command:
+      input: qual é a idade do universo
+      entity: search
+      action: search_for
+  - command:
+      input: quando é o próximo feriado
+      entity: search
+      action: search_for
+  - command:
+      input: pesquise a grade de física da ufabc
+      entity: search
+      action: search_for
+  - command:
+      input: qual a grade de física da ufabc
       entity: search
       action: search_for
   - command:
@@ -49,21 +69,25 @@ commands:
       entity: search
       action: search_youtube
   - command:
-      input: Pesquisar youtube
+      input: pesquisar youtube
       entity: search
       action: search_youtube
   #time
   - command:
-      input: Que horas são
+      input: que horas são
       entity: time
       action: get_time
   - command:
-      input: Que horas são agora
+      input: que hora é agora
+      entity: time
+      action: get_time
+  - command:
+      input: que horas são agora
       entity: time
       action: get_time
   #date
   - command:
-      input: Que dia é hoje
+      input: que dia é hoje
       entity: date
       action: get_date
   - command:
@@ -74,4 +98,90 @@ commands:
       input: qual o dia de hoje
       entity: date
       action: get_date
-
+  - command:
+      input: amanhã é que dia
+      entity: date
+      action: get_tomorrow_date
+  #key
+  - command:
+      input: digite sim
+      entity: key
+      action: type
+  - command:
+      input: digite
+      entity: key
+      action: type
+  - command:
+      input: digitar
+      entity: key
+      action: type
+  - command:
+      input: escreva sim
+      entity: key
+      action: type
+  - command:
+      input: escreva
+      entity: key
+      action: type
+  - command:
+      input: fechar todas as janelas
+      entity: key
+      action: close_app
+  - command:
+      input: fechar aplicativo
+      entity: key
+      action: close_app
+  #open
+  - command:
+      input: abrir spotify
+      entity: open
+      action: open_spotify
+  - command:
+      input: abrir chrome
+      entity: open
+      action: open_chrome
+  - command:
+      input: abra o netflix
+      entity: open
+      action: open_netflix
+  - command:
+      input: assistir netflix
+      entity: open
+      action: open_netflix
+  #schedule
+  - command:
+      input: adicione um lembrete para o dia 19 do dois
+      entity: schedule
+      action: sched_appointment
+  - command:
+      input: anote o compromisso na quarta-feira
+      entity: schedule
+      action: sched_appointment
+  - command:
+      input: anote compromisso
+      entity: schedule
+      action: sched_appointment
+  - command:
+      input: anotar compromissos do dia
+      entity: schedule
+      action: sched_day_appointments
+  - command:
+      input: quais são os compromissos do dia
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: o que tem para amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: quais são as tarefas de amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: quais são os compromissos de amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: quais são os compromissos da tarde
+      entity: schedule
+      action: show_afternoon_appointments

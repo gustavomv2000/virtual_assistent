@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Embedding
 from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import GlobalAveragePooling1D
 
 #importing data from yml file
 data = yaml.safe_load(open('nlu\\train.yml', 'r', encoding='utf-8').read())
@@ -31,6 +32,7 @@ for i, inp in enumerate(inputs):
     for k, ch in enumerate(bytes(inp.encode('utf-8'))):
         input_data[i, k, int(ch)] = 1.0
 
+print(input_data[0])
 
 #set of the outputs, removes duplicates
 labels = set(outputs)
@@ -66,7 +68,7 @@ model.add(Dense(len(output_data), activation='softmax'))
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
 
-model.fit(input_data, output_data, epochs=256)
+model.fit(input_data, output_data, epochs=1200)
 
 #saving model
 model.save('model.h5')

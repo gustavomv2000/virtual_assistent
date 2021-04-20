@@ -1,4 +1,15 @@
-time|get_time
-search|search_for
 search|search_youtube
+time|get_time
+open|open_spotify
+schedule|show_day_appointments
+search|search_for
+date|get_tomorrow_date
+schedule|show_tomorrow_appointments
+key|type
+open|open_chrome
 date|get_date
+key|close_app
+schedule|show_afternoon_appointments
+open|open_netflix
+schedule|sched_appointment
+schedule|sched_day_appointments
