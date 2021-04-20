@@ -19,7 +19,6 @@ mpyg321==1.1.0
 packaging==20.9
 pathlib==1.0.1
 pipwin==0.5.1
-PyAudio @ file:///C:/Users/gusta/pipwin/PyAudio-0.2.11-cp38-cp38-win_amd64.whl
 pycparser==2.20
 pygame==2.0.1
 pyglet==1.5.16

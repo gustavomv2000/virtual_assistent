@@ -1,0 +1,77 @@
+commands:
+  # search
+  - command:
+      input:  Pesquise por
+      entity: search
+      action: search_for
+  - command:
+      input: O que é
+      entity: search
+      action: search_for
+  - command:
+      input: Qual é
+      entity: search
+      action: search_for
+  - command:
+      input: Quando
+      entity: search
+      action: search_for
+  - command:
+      input: Quem
+      entity: search
+      action: search_for
+  - command:
+      input:  Pesquisar
+      entity: search
+      action: search_for
+  - command:
+      input: Pesquise sobre
+      entity: search
+      action: search_for
+  - command:
+      input: pesquisa sobre
+      entity: search
+      action: search_for
+  - command:
+      input: Pesquise
+      entity: search
+      action: search_for
+  - command:
+      input: Pesquise no youtube
+      entity: search
+      action: search_youtube
+  - command:
+      input: Pesquise youtube
+      entity: search
+      action: search_youtube
+  - command:
+      input: Youtube
+      entity: search
+      action: search_youtube
+  - command:
+      input: Pesquisar youtube
+      entity: search
+      action: search_youtube
+  #time
+  - command:
+      input: Que horas são
+      entity: time
+      action: get_time
+  - command:
+      input: Que horas são agora
+      entity: time
+      action: get_time
+  #date
+  - command:
+      input: Que dia é hoje
+      entity: date
+      action: get_date
+  - command:
+      input: hoje é dia
+      entity: date
+      action: get_date
+  - command:
+      input: qual o dia de hoje
+      entity: date
+      action: get_date
+

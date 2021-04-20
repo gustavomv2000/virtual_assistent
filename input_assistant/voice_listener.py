@@ -5,6 +5,7 @@ import pathlib
 import os
 from time import sleep
 import pyglet
+from gtts import gTTS
 
 VI_NAME = "google"
 
@@ -34,7 +35,10 @@ def isActive(audio):
         return False
 
 
-def speak():
+def speak(text):
+    tts = gTTS(text=text, lang='pt-br')
+    tts.save("good.mp3")
+
     music = pyglet.media.load("good.mp3", streaming=False)
     music.play()
 
