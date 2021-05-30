@@ -185,3 +185,263 @@ commands:
       input: quais são os compromissos da tarde
       entity: schedule
       action: show_afternoon_appointments
+  - command:
+      input: marcar compromisso
+      entity: schedule
+      action: sched_appointment
+  - command:
+      input: quais são as tarefas de amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: digite sim
+      entity: key
+      action: type
+  - command:
+      input: que horas são
+      entity: time
+      action: get_time
+  - command:
+      input: que dia é hoje
+      entity: date
+      action: get_date
+  - command:
+      input: quais são as tarefas da tarde
+      entity: schedule
+      action: show_afternoon_appointments
+  - command:
+      input: quais são as tarefas do dia
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: quais são os compromissos do dia
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: marcar compromissos do dia
+      entity: schedule
+      action: sched_day_appointments
+  - command:
+      input: anotar compromissos
+      entity: schedule
+      action: sched_appointments
+  - command:
+      input: anotar compromissos do dia
+      entity: schedule
+      action: sched_day_appointments
+  - command:
+      input: pesquise teclado mecânico
+      entity: search
+      action: search_for
+  - command:
+      input: onde comprar teclado mecânico
+      entity: search
+      action: search_for
+  - command:
+      input: resultado da fórmula 1
+      entity: search
+      action: search_for
+  - command:
+      input: qual o próxima corrida
+      entity: search
+      action: search_for
+  - command:
+      input: qual a próxima corrida
+      entity: search
+      action: search_for
+  - command:
+      input: qual o preço do f1 2021
+      entity: search
+      action: search_for
+  - command:
+      input: qual o preço do mac mini
+      entity: search
+      action: search_for
+  - command:
+      input: o que é o chip m1
+      entity: search
+      action: search_for
+  - command:
+      input: fechar todas as janelas
+      entity: key
+      action: close_app
+  - command:
+      input: fechar este aplicativo
+      entity: key
+      action: close_app
+  - command:
+      input: fecha
+      entity: key
+      action: close_app
+  - command:
+      input: que horas é a reunião de amanhã
+      entity: schedule
+      action: show_tomorrow_meetings
+  - command:
+      input: quais são as reuniões de amanhã
+      entity: schedule
+      action: show_tomorrow_meetings
+  - command:
+      input: que horas são agora
+      entity: time
+      action: get_time
+  - command:
+      input: que hora que é
+      entity: time
+      action: get_time
+  - command:
+      input: fechar aplicativo
+      entity: key
+      action: close_app
+  - command:
+      input: abrir chrome
+      entity: open
+      action: open_chrome
+  - command:
+      input: como crescer cactos
+      entity: search
+      action: search_for
+  - command:
+      input: como saber se meu cacto está morrendo
+      entity: search
+      action: search_for
+  - command:
+      input: qual a data de hoje
+      entity: date
+      action: get_date
+  - command:
+      input: assistir netflix
+      entity: open
+      action: open_netflix
+  - command:
+      input: abra o netflix
+      entity: open
+      action: open_netflix
+  - command:
+      input: qual o dia de hoje
+      entity: date
+      action: get_date
+  - command:
+      input: como vai
+      entity: greetings
+      action: how_are_you
+  - command:
+      input: quanto é 2 + 2
+      entity: math
+      action: sum
+  - command:
+      input: qual é a raiz quadrada de 3
+      entity: math
+      action: square_root
+  - command:
+      input: marcar compromisso para quarta-feira à tarde
+      entity: schedule
+      action: sched_appointment
+  - command:
+      input: abrir netflix
+      entity: open
+      action: open_netflix
+  - command:
+      input: abra a netflix
+      entity: open
+      action: open_netflix
+  - command:
+      input: compromissos de amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: compromissos de hoje
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: quais são os compromissos de hoje
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: quais são os compromissos da semana
+      entity: schedule
+      action: show_week_appointments
+  - command:
+      input: hora de dormir
+      entity: virtual
+      action: time_sleep
+  - command:
+      input: quando o brasil foi descoberto
+      entity: search
+      action: search_for
+  - command:
+      input: quem descobriu o brasil
+      entity: search
+      action: search_for
+  - command:
+      input: lançamentos da spacex
+      entity: search
+      action: search_for
+  - command:
+      input: qual a cotação do dólar hoje
+      entity: search
+      action: search_for
+  - command:
+      input: qual o preço do fórmula 1 2121
+      entity: search
+      action: search_for
+  - command:
+      input: como treinar o modelo
+      entity: search
+      action: search_for
+  - command:
+      input: como regar plantas
+      entity: search
+      action: search_for
+  - command:
+      input: como trocar a pasta térmica
+      entity: search
+      action: search_for
+  - command:
+      input: qual o preço de um kindle
+      entity: search
+      action: search_for
+  - command:
+      input: livro do steve jobs
+      entity: search
+      action: search_for
+  - command:
+      input: ideias de presente
+      entity: search
+      action: search_for
+  - command:
+      input: quem é michael schumacher
+      entity: search
+      action: search_for
+  - command:
+      input: quem é luiz remington
+      entity: search
+      action: search_for
+  - command:
+      input: quanto custa uma cadeira
+      entity: search
+      action: search_for
+  - command:
+      input: assistir ao filme
+      entity: open
+      action: open_netflix
+  - command:
+      input: quais são os próximos aniversários
+      entity: schedule
+      action: show_next_birthdays
+  - command:
+      input: quais são os compromissos de amanhã
+      entity: schedule
+      action: show_tomorrow_appointments
+  - command:
+      input: o que tem para hoje
+      entity: schedule
+      action: show_day_appointments
+  - command:
+      input: fechar a janela
+      entity: key
+      action: close_tab
+  - command:
+      input: fechar janela
+      entity: key
+      action: close_tab

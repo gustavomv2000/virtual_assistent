@@ -2,7 +2,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 #loading the model
-model = load_model('model.h5')
+model = load_model('nlu\\model.h5')
 
 #loading the output labels
 labels = open('labels.txt', 'r', encoding='utf-8').read().split('\n')

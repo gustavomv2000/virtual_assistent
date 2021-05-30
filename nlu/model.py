@@ -7,11 +7,12 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.layers import GlobalAveragePooling1D
 
 #importing data from yml file
-data = yaml.safe_load(open('nlu\\train.yml', 'r', encoding='utf-8').read())
+data = yaml.safe_load(open('train.yml', 'r', encoding='utf-8').read())
 
 #creating inputs and outputs arrays
 inputs, outputs = [], []
 fwrite_inputs = open('inputs.txt', 'w', encoding='utf-8')
+
 
 for command in data['commands']:
     command = command['command']
@@ -68,7 +69,7 @@ model.add(Dense(len(output_data), activation='softmax'))
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
 
-model.fit(input_data, output_data, epochs=1200)
+model.fit(input_data, output_data, epochs=8500)
 
 #saving model
 model.save('model.h5')
